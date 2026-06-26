@@ -1,0 +1,30 @@
+@import './base.css';
+#app {
+  width: 100vw; 
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: block !important; 
+}
+@media (min-width: 1024px) {
+  body {
+    display: block !important; 
+  }
+
+  #app {
+    display: block !important; 
+    grid-template-columns: none !important;
+    padding: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  transition: 0.4s;
+}

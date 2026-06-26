@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#1E1E1E</color>
+    <color name="black">#FFFFFF</color>
+
+    <color name="colorLeesDarkBlue">#82B1FF</color>
+    <color name="colorLeesYellow">#FFD54F</color>
+    <color name="colorLeesLightBlue">#4FC3F7</color>
+    <color name="colorLeesGrey">#AAAAAA</color>
+    <color name="colorLeesTransparentScrim">#CC000000</color>
+    <color name="primary">#D1E1FF</color>
+    <color name="background">#1A1C1E</color>
+    <color name="surface">#2F3033</color>
+    <color name="text_high">#E2E2E6</color>
+    <color name="text_medium">#C4C6D0</color>
+</resources>

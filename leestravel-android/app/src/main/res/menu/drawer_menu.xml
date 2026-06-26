@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_login"
+        android:title="Mi cuenta" />
+
+    <item
+        android:id="@+id/nav_trips"
+        android:icon="@drawable/ic_card_travel"
+        android:title="Mis Viajes" />
+
+    <item
+        android:id="@+id/nav_support"
+        android:icon="@android:drawable/ic_menu_call"
+        android:title="Soporte (WhatsApp)" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Cerrar sesión" />
+
+</menu>

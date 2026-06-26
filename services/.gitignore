@@ -1,0 +1,20 @@
+# Ignorar dependencias de PHP (se descargan con composer install)
+vendor/
+
+# Ignorar variables de entorno reales (claves, hosts y contraseñas)
+.env
+
+# Ignorar imágenes subidas por usuarios o pruebas locales
+LeesTravel/Imag/Photos/*
+!LeesTravel/Imag/Photos/.gitkeep
+
+# Archivos temporales de sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Configuraciones de editores de código
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj

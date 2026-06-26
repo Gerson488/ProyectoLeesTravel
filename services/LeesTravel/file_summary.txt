@@ -1,0 +1,585 @@
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Admin\GetAllPublicationsAdmin.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Publication.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $pubManager = new Publication();     echo $response->responseSuccessValidation($pubManager->getAllPublicationsAdmin());
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Admin\GetMetrics.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once __DIR__ . '/../Config/Cors.php'; require_once __DIR__ . '/../../Response/Response.php'; require_once __DIR__ . '/../../Core/Dashboard.php';  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     try {         $dashboard = new Dashboard();
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Admin\GetPublicationDetailAdmin.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Publication.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idPost = $data["idPost"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Admin\ModeratePublicationAdmin.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Publication.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idPost = $data["idPost"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\AiChat\GetItineraryChatIA.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Itinerary.php'); require_once(__DIR__ . '/../../Response/Response.php');  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $itineraryManager = new Itinerario();     $data = $itineraryManager->GetItineraryChatIA();     echo json_encode(["status" => true, "data" => $data]); }
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\AiChat\GetPromotionChatIA.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Promotion.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $promoManager = new MarketingPromo();     $data = $promoManager->GetPromotionChatIA(); 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\AiChat\GetTripsChatIA.php
+  REL: 
+  FEATURES: headers, includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Trips.php'); require_once(__DIR__ . '/../../Response/Response.php');  header('Content-Type: application/json');  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $tripsManager = new Trips();     $data = $tripsManager->GetTripsChatIA();
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\AiChat\SendMessage.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once '../Config/Cors.php'; require_once '../../Response/Response.php'; require_once '../../Core/AiChat.php';   require_once '../../vendor/autoload.php'; $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2)); $dotenv->load();  $responseHandler = new Response();
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Bookings\DeleteBooking.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Booking.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $idBooking = $data["idBooking"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Bookings\GetBookingDetails.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Booking.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $idBooking = $data["idBooking"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Bookings\GetMyBookings.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Booking.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $idUser = $data["idUser"] ?? null; 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Bookings\RegisterBooking.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Booking.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $passengers = $data["passengers"] ?? [];
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Bookings\UpdateBooking.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Booking.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $idBooking  = $data["idBooking"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Config\AuthMiddleware.php
+  REL: 
+  FUNCTIONS: verificarAutenticacion
+  SAMPLE: <?php function verificarAutenticacion() {     $headers = apache_request_headers();     $authHeader = $headers['Authorization'] ?? $headers['authorization'] ?? $_SERVER['HTTP_AUTHORIZATION'] ?? null;      if (!$authHeader || !preg_match('/Bearer\s(\S+)/', $authHeader, $matches)) {         http_response_code(401);         echo json_encode([             "status" => 401,             "message" => "Acceso denegado: No se proporcionó un token de seguridad válido."
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Config\Cors.php
+  REL: 
+  FEATURES: headers
+  SAMPLE: <?php $origin = $_SERVER['HTTP_ORIGIN'] ?? ''; $allowed_domains = [     'http://localhost:5173',     'http://localhost:5174',     'http://127.0.0.1:5173',     'http://192.168.100.172:5173',     'http://172.20.10.2' ]; 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\History\DeleteHistory.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/History.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idH = $data["idHistory"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\History\GetHistory.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/History.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idP = $data["idPassenger"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\History\RegisterHistory.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/History.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idP   = $data["idPassenger"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\History\UpdateHistory.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/History.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idH  = $data["idHistory"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Itineraries\DeleteActivity.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Itinerary.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $idItinerary = $data["idItinerary"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Itineraries\GetItineraryByTrip.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Itinerary.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $idTrip = $data["Id_Trip"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Itineraries\RegisterItinerary.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Itinerary.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true); 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Itineraries\UpdateActivity.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Itinerary.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true); 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Medical\DeleteMedicalRecord.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/MedicalRecord.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents('php://input'), true);     $idF = $data["idFile"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Medical\GetMedicalRecord.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/MedicalRecord.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents('php://input'), true);     $idP = $data["idPassenger"] ?? null; 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Medical\RegisterMedicalRecord.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/MedicalRecord.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents('php://input'), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idP     = $data["idPassenger"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Medical\UpdateMedicalRecord.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/MedicalRecord.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents('php://input'), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idF       = $data["idFile"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Notifications\CountUnread.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Notification.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idU = $_POST["idUser"] ?? $data["idUser"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Notifications\GetNotifications.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Notification.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Notifications\MarksRead.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Notification.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Notifications\RegisterNotification.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Notification.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Passengers\DeletePassenger.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Passenger.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $idPassenger = $data["idPassenger"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Passengers\GetPassengerByTrip.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Passenger.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idTrip = $data["idTrip"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Passengers\GetPassengerDetail.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Passenger.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents('php://input'), true);     
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Passengers\RegisterPassenger.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Passenger.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true); 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Passengers\UpdateBoardingApp.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Passenger.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {      $inputData = json_decode(file_get_contents("php://input"), true);
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Passengers\UpdatePassenger.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Passenger.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {      $idPassenger      = $_POST["idPassenger"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Promotions\DeletePromo.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Promotion.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idP = $data["idPromo"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Promotions\GetAllPromotionsAdmin.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Promotion.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $promoManager = new MarketingPromo();     echo $response->responseSuccessValidation($promoManager->getAllPromosAdmin());
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Promotions\GetPromotionById.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Promotion.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $idPromo = $data["idPromo"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Promotions\GetPromotionsApp.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Promotion.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $promoManager = new MarketingPromo();     echo $response->responseSuccessValidation($promoManager->getPromotionsApp());
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Promotions\GetPromotionWeb.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Promotion.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $promoManager = new MarketingPromo();     echo $response->responseSuccessValidation($promoManager->getPromotionsWeb());
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Promotions\RegisterPromo.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Promotion.php'); require_once(__DIR__ . '/../../Core/Upload.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     if (isset($_FILES['imageBanner']) && $_FILES['imageBanner']['error'] === UPLOAD_ERR_OK) {
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Promotions\UpdatePromo.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Promotion.php'); require_once(__DIR__ . '/../../Core/Upload.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {      
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Publication\DeletePublication.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Publication.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'DELETE' || $_SERVER['REQUEST_METHOD'] == 'POST') {          $idP = $_GET["idPost"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Publication\GetAllPublicPostsApp.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Blog.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {          $blogManager = new Blog();
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Publication\GetCommunityWeb.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Publication.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {          $pubManager = new Publication();
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Publication\GetPublicationDetail.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Publication.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {          $idP = $_GET["idPost"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Publication\GetPublicationsByTrip.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Publication.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {          $idTrip = $_GET["idTrip"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Publication\GetPublicFeedApp.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Publication.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {          $pubManager = new Publication();
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Publication\RegisterPublication.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Publication.php'); require_once(__DIR__ . '/../../Core/Upload.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Publication\UpdatePublication.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Publication.php'); require_once(__DIR__ . '/../../Core/Upload.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idP = $_POST["idPost"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Quotes\GetAllQuotes.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Quote.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $quoteManager = new Quote();     echo $response->responseSuccessValidation($quoteManager->getAllQuotes());
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Quotes\GetPendingCount.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Quote.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $quoteManager = new Quote();     echo $response->responseSuccessValidation($quoteManager->getPendingCount());
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Quotes\UpdateQuoteStatus.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Quote.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Ratings\DeleteReview.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Rating.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idR = $_POST["idReview"] ?? null;     $idU = $_POST["idUser"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Ratings\GetAverageRating.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Rating.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Ratings\GetReviewsByTrip.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Rating.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idTrip = $_POST["idTrip"] ?? null; 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Ratings\RegisterReview.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Rating.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idTrip  = $_POST["idTrip"] ?? $data["idTrip"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Ratings\UpdateReview.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Rating.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $data = json_decode(file_get_contents("php://input"), true);  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $idR     = $data["idReview"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Travelers\DeleteTraveler.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Travelers.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $idTraveler = $data["idTraveler"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Travelers\GetAllTravelers.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Travelers.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $travelerManager = new Traveler();     echo $response->responseSuccessValidation($travelerManager->getAllTravelers());
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Travelers\GetTravelerByDocument.php
+  REL: 
+  FUNCTIONS: validationDocument
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Travelers.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true); 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Travelers\GetTravelerById.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Travelers.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true); 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Travelers\RegisterTraveler.php
+  REL: 
+  FUNCTIONS: validationGender, validationDocType, validationDate, validationParametros
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Travelers.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true); 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Travelers\UpdateTraveler.php
+  REL: 
+  FUNCTIONS: validationParametros
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Travelers.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true); 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Trips\DeleteTrips.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Trips.php'); require_once(__DIR__ . '/../../Response/Response.php'); require_once(__DIR__ . '/../../Core/Upload.php');   $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Trips\GetActiveTrips.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Trips.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $tripsManager = new Trips();     echo $response->responseSuccessValidation($tripsManager->getActiveTrips());
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Trips\GetAllTrips.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Trips.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $tripsManager = new Trips();     echo $response->responseSuccessValidation($tripsManager->getAllTrips());
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Trips\GetMyTrips.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Trips.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents('php://input'), true);     $idTraveler = $data["idTraveler"] ?? null; 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Trips\GetTripById.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Trips.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $idTrip = $data["idTrip"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Trips\GetTripsWeb.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Core/Trips.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {     $tripsManager = new Trips();     echo $response->responseSuccessValidation($tripsManager->getTripsWeb());
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Trips\RegisterTrips.php
+  REL: 
+  FUNCTIONS: validationDate, validationParametros
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Trips.php'); require_once(__DIR__ . '/../../Core/Upload.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Trips\UpdateTrips.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Trips.php'); require_once(__DIR__ . '/../../Core/Upload.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Trips\UpdateTripStatusApp.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Trips.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {      $inputData = json_decode(file_get_contents("php://input"), true);
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Users\DeleteUser.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../Config/AuthMiddleware.php'); require_once(__DIR__ . '/../../Core/Usuario.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $usuarioLogueado = verificarAutenticacion();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Users\GetUsers.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../Config/AuthMiddleware.php'); require_once(__DIR__ . '/../../Core/Usuario.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $usuarioLogueado = verificarAutenticacion();  if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Users\Login.php
+  REL: 
+  FUNCTIONS: generarJWT
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Usuario.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $email    = $data["email"] ?? null;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Users\RegisterUser.php
+  REL: 
+  FUNCTIONS: validationParametros
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../Config/AuthMiddleware.php'); require_once(__DIR__ . '/../../Core/Usuario.php');  require_once(__DIR__ . '/../../Config/Setting.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $usuarioLogueado = verificarAutenticacion(); 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Users\SearchTraveler.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Travelers.php');  require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); if ($_SERVER['REQUEST_METHOD'] == 'POST') {     $data = json_decode(file_get_contents("php://input"), true);     $term = isset($data["term"]) ? trim($data["term"]) : null;  
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Users\UpdateUser.php
+  REL: 
+  FUNCTIONS: validationParametros
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../Config/AuthMiddleware.php'); require_once(__DIR__ . '/../../Core/Usuario.php'); require_once(__DIR__ . '/../../Response/Response.php');  $response = new Response(); $usuarioLogueado = verificarAutenticacion();  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Utils\CheckId.php
+  REL: 
+  FEATURES: headers, includes
+  SAMPLE: <?php if (ob_get_level()) ob_end_clean();  header("Access-Control-Allow-Origin: *"); header("Access-Control-Allow-Methods: GET, OPTIONS"); header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With"); header("Content-Type: application/json; charset=utf-8");  if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {     exit;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Utils\CheckTraveler.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Config/Setting.php'); require_once(__DIR__ . '/../../Response/Response.php');   $data = json_decode(file_get_contents("php://input"), true); $dni = $data['docNumber'] ?? $data['dni'] ?? $_GET['dni'] ?? null;  if (!$dni) {     echo json_encode([
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\Utils\UploadImage.php
+  REL: 
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Cors.php');  require_once(__DIR__ . '/../../Core/Upload.php'); require_once(__DIR__ . '/../../Response/Response.php');   $response = new Response();   if ($_SERVER['REQUEST_METHOD'] == 'POST') {     if (isset($_FILES['image'])) {         $uploader = new Upload();
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Api\WebForm\ProcessForm.php
+  REL: 
+  FEATURES: headers, includes, instantiates
+  SAMPLE: <?php error_reporting(0); ini_set('display_errors', 0);  require_once(__DIR__ . '/../Config/Cors.php'); require_once(__DIR__ . '/../../Response/Response.php'); require_once(__DIR__ . '/../../Core/Quote.php');  $response = new Response(); 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\composer.json
+  REL: 
+  FEATURES: includes
+  SAMPLE: {     "require": {         "phpmailer/phpmailer": "^7.0",         "vlucas/phpdotenv": "^5.6"     } }
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\composer.lock
+  REL: 
+  CLASSES: for
+  FEATURES: includes
+  SAMPLE: {     "_readme": [         "This file locks the dependencies of your project to a known state",         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",         "This file is @generated automatically"     ],     "content-hash": "44f35196b99daca637bba7043da60fd9",     "packages": [         {             "name": "graham-campbell/result-type",
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Config\Server\Server.php
+  REL: 
+  CLASSES: Server
+  FUNCTIONS: getDsn, getUser, getPassword
+  SAMPLE: <?php 	class Server {  		public function getDsn() { 			return "mysql:host=localhost;port=3306;dbname=lees_travel_cruises_db;charset=utf8"; 		}  		public function getUser() { 			return "root"; 		}
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Config\Setting.php
+  REL: 
+  CLASSES: Setting
+  FUNCTIONS: __construct, getConnection
+  FEATURES: includes, instantiates
+  SAMPLE: <?php  	require_once(__DIR__ . '/Server/Server.php');  	class Setting {  		public $server;  		public function __construct() { 			$this->server = new Server();
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\AiChat.php
+  REL: 
+  CLASSES: AiChat
+  FUNCTIONS: __construct, getFullContext, getResponse
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Core/Promotion.php'); require_once(__DIR__ . '/../Core/Trips.php'); require_once(__DIR__ . '/../Core/Itinerary.php'); require_once(__DIR__ . '/Quote.php');  class AiChat {     private $apiKey;     private $apiUrl;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Blog.php
+  REL: 
+  CLASSES: BlogBE, Blog
+  FUNCTIONS: __construct, __construct, getPostById, createPost, updatePost, deletePost, getPublicPostsByTrip, getAllPublicPosts, getAllPendingPosts, moderatePost, getAllPublicPostsApp
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class BlogBE {     public $idPost;     public $idTrip;     public $idUser;     public $title;     public $description;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Booking.php
+  REL: 
+  CLASSES: BookingBE, Booking
+  FUNCTIONS: __construct, __construct, getIdByUserDni, createBooking, registerPassengerInBooking, updateBookingStatus, deleteBooking, getBookingsByUser, getAllBookings, getPassengersByBooking
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class BookingBE {     public $idBooking;     public $idPurchaserUser;     public $bookingDate;     public $bookingStatus; 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Dashboard.php
+  REL: 
+  CLASSES: Dashboard
+  FUNCTIONS: __construct, getAdminMetrics, getBusinessCharts
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class Dashboard {     private $connection;      public function __construct() {         $setting = new Setting();         $this->connection = $setting->getConnection();
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\History.php
+  REL: 
+  CLASSES: HistoryBE, History
+  FUNCTIONS: __construct, __construct, createLog, updateLog, deleteLog, getHistoryByPassenger
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class HistoryBE {     public $idHistory;     public $idPassenger;     public $eventDescription;     public $idGuiaUser; 
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Itinerary.php
+  REL: 
+  CLASSES: ItinerarioBE, Itinerario
+  FUNCTIONS: __construct, __construct, createActivity, updateActivity, deleteActivity, getItineraryByTrip, getItineraryForAttendance, GetItineraryChatIA
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class ItinerarioBE {     public $idItinerary;     public $idTrip;     public $dayNumber;     public $portOfCall;     public $activityDescription;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\MedicalRecord.php
+  REL: 
+  CLASSES: MedicalRecordBE, MedicalRecord
+  FUNCTIONS: __construct, __construct, getRecordByPassenger, createRecord, updateRecord, getTravelerIdByPassenger, deleteRecord
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php'); class MedicalRecordBE {     public $idFile;     public $idTraveler;      public $bloodType;     public $allergies;     public $chronicDiseases;     public $currentMedication;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Notification.php
+  REL: 
+  CLASSES: NotificationBE, Notification
+  FUNCTIONS: __construct, __construct, createNotification, getNotificationsByUser, markAsRead, countUnread
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class NotificationBE {     public $idNotification;     public $idUser;     public $title;     public $message;     public $isRead;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Passenger.php
+  REL: 
+  CLASSES: PasajeroBE, Pasajero
+  FUNCTIONS: __construct, __construct, createPassenger, updatePassenger, updateBoardingStatusApp, deletePassenger, getPassengersByTrip, getTravelerById, getPassengerDetail, getAllPassengers
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class PasajeroBE {     public $idPassenger;     public $idBooking;     public $idTraveler;     public $idTrip;     public $cabinNumber;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Promotion.php
+  REL: 
+  CLASSES: PromoBE, MarketingPromo
+  FUNCTIONS: __construct, __construct, getPromoById, createPromo, updatePromo, togglePromoStatus, deletePromo, getPromotionsWeb, getAllPromosAdmin, getPromotionsApp, GetPromotionChatIA, formatDateSpanish
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class PromoBE {     public $idPromo;     public $idTrip;     public $titleOffer;     public $description;     public $imageBanner;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Publication.php
+  REL: 
+  CLASSES: PublicationBE, Publication
+  FUNCTIONS: __construct, __construct, generateUUID, getPublicationById, registerPublication, updatePublication, deletePublication, getPublicationsWeb, getPublicationsByTripAndUser, getAllPublicPublicationsApp, getAllPendingPublications, moderatePublication, getFullPublicationById, getAllPublicationsAdmin, getFullPublicationAdminById, timeElapsedString
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class PublicationBE {     public ?string $idPost;     public ?string $idTrip;     public ?string $idUser;     public ?string $title;     public ?string $description;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Quote.php
+  REL: 
+  CLASSES: QuoteBE, Quote
+  FUNCTIONS: __construct, __construct, saveQuoteToDB, sendQuoteEmail, getAllQuotes, getPendingCount, updateQuoteStatus
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php'); require_once(__DIR__ . '/../vendor/autoload.php');  use PHPMailer\PHPMailer\PHPMailer; use PHPMailer\PHPMailer\Exception;  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../'); $dotenv->load();
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Rating.php
+  REL: 
+  CLASSES: ReviewBE, Rating
+  FUNCTIONS: __construct, __construct, createReview, getReviewsByTrip, getAverageRating, updateReview, deleteReview
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class ReviewBE {     public $idReview;     public $idTrip;     public $idUser;     public $rating;     public $comment;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Templates\QuoteEmail.html
+  REL: 
+  SAMPLE: <div style='background-color: #f4f7f9; padding: 40px 10px; font-family: sans-serif;'>     <div style='max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);'>                  <div style='background-color: #0d6efd; padding: 30px; text-align: center;'>             <h1 style='color: #ffffff; margin: 0; font-size: 24px;'>Lees Travel EIRL</h1>             <p style='color: #e0eaff; margin: 5px 0 0 0; font-size: 14px;'>Nueva Solicitud de Cotización</p>         </div>          <div style='padding: 30px;'>             <p style='color: #333; font-size: 16px; margin-bottom: 25px;'>
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Travelers.php
+  REL: 
+  CLASSES: TravelerBE, Traveler
+  FUNCTIONS: __construct, __construct, createTraveler, getTravelerByDocument, updateTraveler, deleteTraveler, getAllTravelers, getTravelerById
+  FEATURES: includes, instantiates
+  SAMPLE:     <?php     require_once(__DIR__ . '/../Config/Setting.php');     require_once(__DIR__ . '/../Response/Response.php');      class TravelerBE {         public $idTraveler;         public $firstName;         public $lastName;         public $birthDate;         public $gender;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Trips.php
+  REL: 
+  CLASSES: TripsBE, Trips
+  FUNCTIONS: __construct, __construct, getAllTrips, getTripById, createTrip, updateTrip, deleteTrip, getTripsWeb, getMyTripsByTraveler, getActiveTrips, GetTripsChatIA, formatDateSpanish, updateTripStatusApp
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class TripsBE {     public $idTrip;     public $destinationName;     public $shipName;     public $cruiseLine;     public $departurePort;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Upload.php
+  REL: 
+  CLASSES: Upload
+  FUNCTIONS: __construct, saveImage, compressAndSave
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class Upload {     private $targetDir;     private $allowedTypes = ['jpg', 'png', 'jpeg', 'gif', 'webp'];     private $allowedMimes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];     private $maxSize = 5242880;  
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Core\Usuario.php
+  REL: 
+  CLASSES: UsuarioBE, Usuario
+  FUNCTIONS: __construct, __construct, getLogin, createUser, updateUser, deleteUser, getAllUsers, emailExists
+  FEATURES: includes, instantiates
+  SAMPLE: <?php require_once(__DIR__ . '/../Config/Setting.php'); require_once(__DIR__ . '/../Response/Response.php');  class UsuarioBE {     public $idUser;     public $idTraveler;     public $email;     public $password;     public $photoPath;
+
+FILE: C:\www\Apache24\htdocs\RoxCode\LeesTravel\services\LeesTravel\Response\Response.php
+  REL: 
+  CLASSES: Response
+  FUNCTIONS: responseSuccess, responseSuccessValidation, responseMessageSuccess, responseError, responseErrorMessage, responseErrorSession, responseMessageArray, structSuccess, structMessageSuccess, structMessageErrorService, structMessageErrorCustom, structMessageExpireSession
+  SAMPLE: <?php  	class Response {  		//status 200 servicio correcto 		//status 201 Problemas con el servicio 		//status 202 Mensajes Custom de error 		//status 401 Mensaje de expiro session  		public function responseSuccess($values) {
+

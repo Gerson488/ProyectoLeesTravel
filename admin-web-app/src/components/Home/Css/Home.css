@@ -1,0 +1,91 @@
+.text-purple {
+  color: #8b5cf6;
+}
+.text-purple-light {
+  color: #a885ee;
+}
+.bg-purple {
+  background-color: #8b5cf6;
+}
+.italic {
+  font-style: italic;
+}
+.btn-purple {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  color: white;
+  transition: all 0.3s ease;
+}
+.btn-purple:hover {
+  background-color: #59359a;
+  transform: translateY(-2px);
+  color: white;
+}
+.sidebar-btn {
+  transition: all 0.3s ease;
+  border-left: 5px solid transparent;
+}
+.sidebar-btn:hover,
+.router-link-active {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-left: 5px solid #ffd000 !important;
+  color: #ffd000 !important;
+}
+.sidebar-btn:hover {
+  padding-left: 2rem !important;
+}
+.stat-card,
+.hover-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.stat-card:hover,
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.hover-card {
+  transition: all 0.3s ease;
+}
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.btn-purple {
+  background-color: #6f42c1;
+  color: white;
+}
+.btn-purple:hover {
+  background-color: #59359a;
+  color: white;
+}
+.hover-card {
+  transition: transform 0.3s ease, shadow 0.3s ease;
+}
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+.btn-purple {
+  background-color: #6f42c1;
+  color: white;
+}
+.btn-purple:hover {
+  background-color: #59359a;
+  color: white;
+}

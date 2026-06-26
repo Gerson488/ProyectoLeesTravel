@@ -1,0 +1,106 @@
+.sidebar-custom {
+  width: 240px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.brand-title {
+  letter-spacing: 2px;
+  color: #ffd000;
+}
+.sidebar-btn {
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.sidebar-btn:hover {
+  background: rgba(255, 208, 0, 0.1) !important;
+  color: #ffd000 !important;
+}
+
+.active-warning {
+  background-color: #ffd000 !important;
+  color: #212529 !important;
+}
+.text-warning-custom {
+  color: #ffd000;
+}
+
+.divider-warning {
+  border-color: #ffd000;
+  border-width: 2px;
+  opacity: 1;
+  width: 80px;
+}
+.tabla-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 208, 0, 0.05) !important;
+}
+
+.table code {
+  font-size: 0.9rem;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ffd000 !important;
+  box-shadow: 0 0 8px rgba(255, 208, 0, 0.2) !important;
+  outline: none;
+}
+.modal-backdrop-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(8px); 
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content-custom {
+  max-width: 550px;
+  width: 95%;
+  background: #ffffff !important; 
+  color: #212529 !important; 
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: modalIn 0.3s ease-out;
+}
+.modal-content-custom label {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+.modal-content-custom .form-control,
+.modal-content-custom .form-select {
+  color: #212529 !important; 
+  background-color: #ffffff !important;
+  border: 1px solid #ced4da !important;
+}
+
+.modal-content-custom .form-control::placeholder {
+  color: #adb5bd !important;
+}
+
+.modal-content-custom .form-control[readonly] {
+  background-color: #f8f9fa !important;
+  color: #495057 !important;
+  border-color: #e9ecef !important;
+}
+
+@keyframes modalIn {
+  from {
+    transform: scale(0.95) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}

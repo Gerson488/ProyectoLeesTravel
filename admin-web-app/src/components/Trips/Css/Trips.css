@@ -1,0 +1,117 @@
+.trip-card {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.trip-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 193, 7, 0.4) !important;
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.transition-img {
+  transition: transform 0.8s ease;
+}
+
+.trip-card:hover .transition-img {
+  transform: scale(1.1);
+}
+
+.upload-zone {
+  border: 2px dashed #dee2e6;
+  transition: border-color 0.3s ease;
+}
+
+.upload-zone:hover {
+  border-color: #0d6efd;
+}
+
+.file-input-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.modal-backdrop-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.divider-warning {
+  border-top: 2px solid #ffc107;
+  width: 50px;
+  opacity: 1;
+}
+.trip-card-white {
+  background: #ffffff;
+  border: 1px solid #e9ecef !important;
+  transition: all 0.3s ease;
+}
+
+.trip-card-white:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.text-primary {
+  color: #0d6efd !important;
+}
+.text-purple-light {
+  color: #a885ee;
+}
+.sidebar-btn {
+  transition: all 0.3s ease;
+  border-left: 5px solid transparent;
+}
+.sidebar-btn:hover,
+.router-link-active {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-left: 5px solid #ffd000 !important;
+  color: #ffd000 !important;
+}
+.sidebar-btn:hover {
+  padding-left: 2rem !important;
+}
+.hover-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+.btn-purple {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-purple:hover {
+  background-color: #59359a;
+  transform: translateY(-2px);
+  color: white;
+}
+.transition-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

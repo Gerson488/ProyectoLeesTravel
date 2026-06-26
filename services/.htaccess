@@ -1,0 +1,11 @@
+<Files ".env">
+    Require all denied
+</Files>
+
+<FilesMatch "^(composer\.json|composer\.lock|\.gitignore)$">
+    Require all denied
+</FilesMatch>
+
+RedirectMatch 403 ^.*/vendor/.*$
+
+Options -Indexes

@@ -1,0 +1,120 @@
+.main-layout {
+  display: flex;
+}
+
+.admin-layout {
+  min-height: 100vh;
+  background-color: #f4f7f6;
+}
+
+.sidebar {
+  width: 280px;
+  background: #212529; 
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+.sidebar-btn {
+  transition: all 0.3s ease;
+  border-left: 5px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar-btn:hover,
+.router-link-active {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-left: 5px solid #ffd000 !important;
+  color: #ffd000 !important;
+}
+
+.sidebar-btn:hover {
+  padding-left: 2rem !important;
+}
+.text-purple { color: #6f42c1 !important; }
+.bg-purple { background-color: #6f42c1 !important; }
+.bg-purple-subtle { background-color: #f1e9ff !important; }
+.border-purple { border-color: #c084fc !important; }
+.btn-purple {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  color: white;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-purple:hover {
+  background-color: #59359a;
+  transform: translateY(-2px);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-outline-purple {
+  border-color: #6f42c1;
+  color: #6f42c1;
+}
+
+.btn-outline-purple:hover {
+  background-color: #6f42c1;
+  color: white;
+}
+.user-card { border-radius: 1rem !important; }
+.rounded-4 { border-radius: 1rem !important; }
+
+.avatar-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.table-header-light th {
+  background-color: #f8f9fa;
+  padding: 1rem 0.5rem;
+  color: #495057;
+  font-weight: 700;
+}
+.table-hover tbody tr:hover {
+  background-color: rgba(111, 66, 193, 0.05);
+  transition: background-color 0.2s ease;
+}
+.btn-action {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-action.edit { color: #0d6efd; border-color: #0d6efd; }
+.btn-action.edit:hover { background: #0d6efd; color: white; }
+
+.btn-action.delete { color: #dc3545; border-color: #dc3545; }
+.btn-action.delete:hover { background: #dc3545; color: white; }
+.modal-content {
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 1rem;
+}
+
+.input-group-text {
+  border: none;
+  background-color: #f8f9fa;
+}
+
+.form-control:focus, 
+.form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+  border-color: #6f42c1;
+}

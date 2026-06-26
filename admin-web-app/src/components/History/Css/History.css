@@ -1,0 +1,34 @@
+/* src/components/History/Css/History.css */
+
+/* Estilo para los selectores de filtro en la Bitácora */
+select.form-select-history {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+select.form-select-history:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 208, 0, 0.25);
+  border-color: #ffd000;
+}
+
+/* Estilo para la tipografía de fechas o registros técnicos */
+.history-timestamp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* Asegurar que las tarjetas de métricas resalten igual que en Asistencia */
+.card-kpi {
+  transition: transform 0.2s ease;
+}
+
+.card-kpi:hover {
+  transform: translateY(-2px);
+}
+
+/* Espaciado para botones de acción en la tabla */
+.btn-action-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
